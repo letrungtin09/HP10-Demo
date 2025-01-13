@@ -1,0 +1,22 @@
+<!-- filepath: /Users/chien/Downloads/monday/blog/templates/login.html -->
+{% extends "base.html" %}
+
+{% block title %}
+Login - My App
+{% endblock %}
+
+{% block content %}
+<h2>Login</h2>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+</form>
+{% endblock %}

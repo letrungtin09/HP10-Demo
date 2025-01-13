@@ -1,0 +1,25 @@
+ <!-- filepath: /Users/chien/Downloads/monday/blog/templates/home.html -->
+{% extends "base.html" %}
+
+{% block title %}
+Home - My App
+{% endblock %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="container">
+<div class="card" style="width: 18rem; margin-bottom: 1rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{ post.subtitle }}</h6>
+        <p class="card-text">{{ post.content }}</p>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+        {% endif %}
+    </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}
+
